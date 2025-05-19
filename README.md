@@ -26,3 +26,5 @@ Things you may want to cover:
 
 <!-- rails g scaffold posts title:string description:string keywords:string  -->
 <!-- rails db:migrate -->
+<!-- rails g controller home about -->
+<!-- active_storage  is to manage file uploads in Rails applications -->
