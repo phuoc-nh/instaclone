@@ -28,3 +28,8 @@ Things you may want to cover:
 <!-- rails db:migrate -->
 <!-- rails g controller home about -->
 <!-- active_storage  is to manage file uploads in Rails applications -->
+
+<!-- bundle install -->
+<!-- rails generate devise:install -->
+
+<!-- rails g devise user -->
