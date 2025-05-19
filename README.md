@@ -22,3 +22,7 @@ Things you may want to cover:
 * Deployment instructions
 
 * ...
+
+
+<!-- rails g scaffold posts title:string description:string keywords:string  -->
+<!-- rails db:migrate -->
