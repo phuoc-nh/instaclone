@@ -4,8 +4,14 @@
 
   <div>
   <% invalid = post.errors.include?(:title) %>
+
+    <%= form.hidden_field :user_id, value: current_user.id %>
+
     <%= form.label :title, style: "display: block" %>
     <%= form.text_field :title, class: "form-control" %>  
+
+
+
     <% if invalid %>
       <div class="alert alert-danger">
         <%= post.errors.full_messages_for(:title).join(", ") %>
