@@ -8,8 +8,13 @@ class PostsController < ApplicationController
     @posts = Post.all
   end
 
+  def show
+  
+  end
+
   # GET /posts/1 or /posts/1.json
   def show
+    @comment = @post.comments.build
   end
 
   # GET /posts/new
@@ -58,6 +63,11 @@ class PostsController < ApplicationController
       format.json { head :no_content }
     end
   end
+
+  def myposts
+    @posts = Post.all.where(user_id: current_user.id)
+  end
+
 
   private
     # Use callbacks to share common setup or constraints between actions.
