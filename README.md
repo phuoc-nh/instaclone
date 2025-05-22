@@ -35,3 +35,5 @@ Things you may want to cover:
 <!-- rails g devise user -->
 
 <!-- rails g migration AddUserIdToPosts user_id:string to create a new column -->
+
+<!-- rails g devise:controllers users -> if want to customize devise controllers -->

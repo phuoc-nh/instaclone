@@ -10,6 +10,10 @@
 
   <% if user_signed_in? %>
     <%= link_to "My Posts", posts_myposts_path, class: "nav-link" %>
+  <%= current_user.avatar.attached? %>
+    <% if current_user.avatar.attached? %>
+      <%= image_tag url_for(current_user.avatar), style: "object-fit: contain; width: 50px; height: 50px" %>
+    <% end %>
   <% end %>
 
 
@@ -20,5 +24,8 @@
 
   <%= link_to "New post", new_post_path, class: "nav-link" %>
   <%= link_to "About", home_about_path, class: "nav-link" %>
+  <%= link_to "View my profile", current_user, class: "nav-link" %>
+
+  <%= link_to "Edit my profile", edit_user_registration_path, class: "nav-link" %>
 
 </nav>
