@@ -8,6 +8,8 @@ class Post < ApplicationRecord
 
 	has_many :comments
 
+	has_many :likes, dependent: :destroy
+
 	before_create :randomize_id
 	private
 	def randomize_id

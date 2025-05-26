@@ -18,6 +18,8 @@
       <%= link_to "", post, class:"post-link" %>
     </p>
 
+    
+
     <% post.images.each do |image| %>
       <%= image_tag image, style: "object-fit: contain; width: 200px; height: 200px" %>
     <% end %>
@@ -25,4 +27,16 @@
 <div>
 <p>
   <%= link_to post.user.email, post.user %>
+
+  <% like = current_user.likes.find_by(post: post) %>
+  <% if user_signed_in? %>
+  <% if like.nil? %>
+    <%= button_to "like", likes_path, params: { like:  { post_id: post.id } }, method: :post %>
+  <% else %>
+    <%= button_to "Unlike", like_path(like), method: :delete %>
+
+    <%#= button_to "unlike", like_path(like), method: :delete %>
+  <% end %>
+  <% end %>
+    <%= post.likes.count %> likes
 </p></div>
